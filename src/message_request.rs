@@ -141,7 +141,10 @@ pub trait ProcessRequest<M, S = Bincode> {
         S: Serializer<Res> + Serializer<M>;
 }
 
-impl<M, S> ProcessRequest<M, S> for Process<M, S> {
+impl<M, S, PS> ProcessRequest<M, S> for Process<M, PS>
+where
+    PS: Serializer<M>,
+{
     fn request<Res, Req, F>(&self, f: F, req: Req) -> Res
     where
         F: Fn(MessageRequest<Req, Res, S>) -> M,
