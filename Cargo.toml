@@ -1,6 +1,6 @@
 [package]
 name = "lunatic-message-request"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Message responses using regular lunatic processes."
 authors = ["Ari Seyhun <ariseyhun@live.com.au>"]
